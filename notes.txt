@@ -2,3 +2,7 @@ So currently I have an ICallback interface and the proxy stuff generated an iden
 The client implementation needs to be IServiceCallback
 
 I don't really know where IServiceCallback came from...
+
+
+https://stackoverflow.com/questions/1044174/what-steps-do-i-need-to-take-to-use-wcf-callbacks
+https://adamprescott.net/2012/08/15/a-simple-wcf-service-callback-example/

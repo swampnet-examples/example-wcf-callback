@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shared
 {
-    [ServiceContract(CallbackContract = typeof(ICallback), SessionMode = SessionMode.Required)]
+    [ServiceContract(CallbackContract = typeof(ICallback))]
     public interface IService
     {
         [OperationContract]

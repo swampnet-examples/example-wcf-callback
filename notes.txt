@@ -1,0 +1,4 @@
+So currently I have an ICallback interface and the proxy stuff generated an identical IServiceCallback interface.
+The client implementation needs to be IServiceCallback
+
+I don't really know where IServiceCallback came from...

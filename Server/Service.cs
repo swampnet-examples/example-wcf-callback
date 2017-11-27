@@ -43,13 +43,35 @@ namespace Server
 
         public void Subscribe()
         {
+            ICallback subscriber = OperationContext.Current.GetCallbackChannel<ICallback>();
+            if(subscriber != null)
+            {
+                Log.Information("Subscribe");
 
+                lock (_callbacks)
+                {
+                    _callbacks.Add(subscriber);
+                }
+
+                subscriber.Poke("Poke!");
+            }
         }
 
 
         public void Unsubscribe()
         {
+            ICallback subscriber = OperationContext.Current.GetCallbackChannel<ICallback>();
+            if (subscriber != null)
+            {
+                Log.Information("Unsubscribe");
 
+                lock (_callbacks)
+                {
+                    _callbacks.Remove(subscriber);
+                }
+            }
         }
+
+        private List<ICallback> _callbacks = new List<ICallback>();
     }
 }
